@@ -3,6 +3,7 @@ import User from "./components/User";
 import Main from "./components/Main";
 import MyData from "./components/MyData";
 import ReState from "./components/ReState";
+import Formvalues from "./components/Formvalues";
 
 const App = () => {
   const [state, setState] = useState({
@@ -84,6 +85,10 @@ const App = () => {
       <hr />
       <hr />
       <ReState />
+
+      <hr />
+      <hr />
+      <Formvalues />
     </div>
   );
 };
