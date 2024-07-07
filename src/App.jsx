@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import MyData from "./components/MyData";
 import ReState from "./components/ReState";
 import Formvalues from "./components/Formvalues";
+import UseEffctHook from "./components/UseEffctHook";
 
 const App = () => {
   const [state, setState] = useState({
@@ -89,6 +90,10 @@ const App = () => {
       <hr />
       <hr />
       <Formvalues />
+
+      <hr />
+      <hr />
+      <UseEffctHook />
     </div>
   );
 };
