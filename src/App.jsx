@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import User from "./components/User";
 import Main from "./components/Main";
 import MyData from "./components/MyData";
+import ReState from "./components/ReState";
 
 const App = () => {
   const [state, setState] = useState({
@@ -35,6 +36,14 @@ const App = () => {
   console.log(state);
   console.log(data);
 
+  const handleSubmit = () => {
+    console.log("Submitted the values");
+  };
+
+  useEffect(() => {
+    handleSubmit();
+  });
+
   return (
     <div>
       <h1>{state.name}</h1>
@@ -44,8 +53,8 @@ const App = () => {
       <div className="w-[100%] h-2 bg-yellow-200"></div>
 
       <div className="grid grid-rows-1 grid-cols-4">
-        {data?.map((user) => (
-          <div key={user.name} className="p-2 border-gray-500 rounded-md">
+        {data?.map((user, index) => (
+          <div key={index} className="p-2 border-gray-500 rounded-md">
             <h1>{user.name}</h1>
             <img src={user.image ? user.image : "image"} alt="image-card" />
             <p>{user.hometown}</p>
@@ -59,6 +68,22 @@ const App = () => {
       >
         Click Me
       </button>
+
+      <hr />
+      <hr />
+
+      <form onSubmit={handleSubmit}>
+        Username :
+        <input type="text" placeholder="Kavishka" />
+        <br />
+        Password :
+        <input type="password" placeholder="********" />
+        <button type="submit">Submit</button>
+      </form>
+
+      <hr />
+      <hr />
+      <ReState />
     </div>
   );
 };
